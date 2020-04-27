@@ -7,19 +7,17 @@ export default (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // props.history.push(`/`); // react router navigation, redirection
-    Scrape.getProduct(productname).then(result => {
+    Scrape.searchProduct(productname).then(result => {
       console.log(result);
     })
   }
-
-  
 
   return (
     <div className="search">
       <form onSubmit={ handleSubmit }>
         <label>
           Search:
-          <input type="search" value={ productname } onChange={ (e) => setProductname(e.target.value) } />
+          <input name="search" type="search" value={ productname } onChange={ (e) => setProductname(e.target.value) } />
         </label>
         <button>Search</button>
       </form>

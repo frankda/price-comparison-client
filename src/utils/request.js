@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const Scrape = {
-  getProduct(productname) {
-    return axios.get(`http://localhost:3001/search/${productname}`);
+  searchProduct(productname) {
+    return axios.post(`http://localhost:3001/search`, { productname: productname });  // send an object with key named productname
   }
 }
 
