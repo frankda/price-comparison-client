@@ -8,7 +8,7 @@ export default (props) => {
     e.preventDefault();
     // props.history.push(`/`); // react router navigation, redirection
     Scrape.getProduct(productname).then(result => {
-      console.log('request sent');
+      console.log(result);
     })
   }
 
