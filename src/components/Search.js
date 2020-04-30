@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import Scrape from '../utils/request';
 import { Button, Tooltip } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import { Gallery } from './Gallery';
 
-
-export default (props) => {
+export const Search = (props) => {
   const [productname, setProductname] = useState(''); // array destructuring
+  const [results, setResults] = useState([]);
+  const [searched, setSearched] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // props.history.push(`/`); // react router navigation, redirection
     Scrape.searchProduct(productname).then(result => {
       console.log(result);
-    })
+      setResults(result.data);
+      setSearched(true);
+    });
   }
 
   return (
@@ -24,6 +28,10 @@ export default (props) => {
         </label>
         <button>Search</button>
       </form>
+      {results.length
+        ? <Gallery products={results} />
+        : null
+      }
     </div>
   );
 }
