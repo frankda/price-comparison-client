@@ -5,7 +5,7 @@ const TEST_SERVER_URL = 'http://localhost:3001/search'
 
 const Scrape = {
   searchProduct(productname) {
-    return axios.post(TEST_SERVER_URL, { productname: productname });  // send an object with key named productname
+    return axios.post(SERVER_URL, { productname: productname });  // send an object with key named productname
   }
 }
 

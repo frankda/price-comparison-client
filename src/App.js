@@ -1,17 +1,28 @@
 import React from 'react';
-// import ReactDOM from 'react-dom'
-
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { Layout } from 'antd';
+// import { HashRouter as Router, Route } from 'react-router-dom';
+import './App.scss';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 import Search from './components/Search';
 
+
 function App() {
   return (
-    <Router>
-      <div>
-        <Route exact path="/search" component={ Search } />
+      <div className="container">
+
+        <Header>
+          header
+        </Header>
+        
+        <Search />
+
+        <Footer>
+          
+        </Footer>
+
       </div>
-    </Router>
   );
 }
 

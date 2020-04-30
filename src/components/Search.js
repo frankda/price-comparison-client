@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Scrape from '../utils/request';
+import { Button, Tooltip } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+
 
 export default (props) => {
   const [productname, setProductname] = useState(''); // array destructuring
@@ -14,10 +17,10 @@ export default (props) => {
 
   return (
     <div className="search">
+      <h2>Compare Product Now</h2>
       <form onSubmit={ handleSubmit }>
         <label>
-          Search:
-          <input name="search" type="search" value={ productname } onChange={ (e) => setProductname(e.target.value) } />
+          <input name="search" placeholder="Search product" type="search" value={ productname } onChange={ (e) => setProductname(e.target.value) } />
         </label>
         <button>Search</button>
       </form>
