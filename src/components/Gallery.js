@@ -5,6 +5,7 @@ export class Gallery extends Component {
     super(props);
     this.state = {
       onComparisonProduct: this.props.products[0],
+      collapse: false,
     }
   }
 
@@ -13,6 +14,10 @@ export class Gallery extends Component {
     if (nextProps.products[0] !== this.state.onComparisonProduct) {
       this.setState({ onComparisonProduct: nextProps.products[0] });
     }
+  }
+
+  toggle = () => {
+    this.setState({collapse: !this.state.collapse})
   }
 
   render() {
@@ -30,12 +35,19 @@ export class Gallery extends Component {
             <p>{this.state.onComparisonProduct.productPrice}</p>
           </div>
           <div className="card card-2">
+            Coming Soon
           </div>
         </div>
 
-        <a id="more-products-link">Show More ..</a>
+        <a id="more-products-link" onClick={this.toggle}>Show More ..</a>
         
-        <div className="more-products">
+        <div 
+          className={
+            this.state.collapse
+            ? "more-products"
+            : "more-products collapse-active"
+          }
+        >
           {this.props.products.map((p, i) => 
             <div key={i} className="more-products-card" onClick={() => {this.setState({onComparisonProduct: p})}}>
               <img src={p.productImage} alt="" />

@@ -7,15 +7,17 @@ import { Gallery } from './Gallery';
 export const Search = (props) => {
   const [productname, setProductname] = useState(''); // array destructuring
   const [results, setResults] = useState([]);
-  const [searched, setSearched] = useState(false)
+  const [searched, setSearched] = useState(false);
+  const [isfetching, setIsfetching] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // props.history.push(`/`); // react router navigation, redirection
+    setIsfetching(true);
     Scrape.searchProduct(productname).then(result => {
       console.log(result);
       setResults(result.data);
       setSearched(true);
+      setIsfetching(false);
     });
   }
 
@@ -28,6 +30,7 @@ export const Search = (props) => {
         </label>
         <button>Search</button>
       </form>
+      {isfetching? <p>Loading...</p> : null}
       {results.length
         ? <Gallery products={results} />
         : null
