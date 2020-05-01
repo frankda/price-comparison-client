@@ -39,7 +39,7 @@ export class Gallery extends Component {
           </div>
         </div>
 
-        <a id="more-products-link" onClick={this.toggle}>Show More ..</a>
+        <a id="more-products-link" onClick={this.toggle}>{this.state.collapse ? 'Hide' : 'Show More ..'}</a>
         
         <div 
           className={
