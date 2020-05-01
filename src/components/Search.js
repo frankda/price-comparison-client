@@ -5,7 +5,7 @@ import { SearchOutlined } from '@ant-design/icons';
 import { Gallery } from './Gallery';
 
 export const Search = (props) => {
-  const [productname, setProductname] = useState(''); // array destructuring
+  // const [productname, setProductname] = useState(''); // array destructuring
   const [results, setResults] = useState([]);
   const [searched, setSearched] = useState(false);
   const [isfetching, setIsfetching] = useState(false);
@@ -13,6 +13,7 @@ export const Search = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsfetching(true);
+    const productname = document.querySelector('#searching-product').value
     Scrape.searchProduct(productname).then(result => {
       console.log(result);
       setResults(result.data);
@@ -26,12 +27,12 @@ export const Search = (props) => {
       <h2>Compare Product Now</h2>
       <form onSubmit={ handleSubmit }>
         <label>
-          <input name="search" placeholder="Search product" type="search" value={ productname } onChange={ (e) => setProductname(e.target.value) } />
+          <input id="searching-product" name="search" placeholder="Search product" type="search" />
         </label>
         <button>Search</button>
       </form>
       {isfetching? <p>Loading...</p> : null}
-      {results.length
+      {results.length && !isfetching
         ? <Gallery products={results} />
         : null
       }
