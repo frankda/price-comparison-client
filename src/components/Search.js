@@ -31,9 +31,9 @@ export const Search = (props) => {
         </label>
         <button>Search</button>
       </form>
-      {isfetching? <p>Loading...</p> : null}
+      {isfetching? <p style={{marginTop: 30}}>Loading...</p> : null}
       {results.length && !isfetching
-        ? <Gallery products={results} />
+        ? typeof(results) === 'object' ? <Gallery products={results} /> : <p style={{marginTop: 30}}>No matching results</p>
         : null
       }
     </div>
