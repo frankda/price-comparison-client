@@ -32,7 +32,7 @@ export class Gallery extends Component {
             <a href={this.state.onComparisonProduct.productLink}>
               <p>{this.state.onComparisonProduct.productName}</p>
             </a>
-            <p>{this.state.onComparisonProduct.productPrice}</p>
+            <p>$ {this.state.onComparisonProduct.productPrice}</p>
           </div>
           <div className="card card-2">
             Coming Soon
