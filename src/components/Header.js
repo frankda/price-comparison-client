@@ -13,7 +13,7 @@ export default () => {
     <header>
       <div className="logo">
         <img src="" alt="" />
-        <h1>Apples to Apples</h1>
+        <h1>Price Comparison</h1>
       </div>
       <div className="user-profile">
         <Button type="primary">
