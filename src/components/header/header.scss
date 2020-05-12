@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-profile {
+    display: flex;
+    align-items: center;
+    
+    * {
+      margin-right: 10px;
+    }
+
+    .login {
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      font-size: 24px;
+    }
+  }
+}
