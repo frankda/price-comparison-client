@@ -23,9 +23,9 @@ export const Search = (props) => {
 
   return (
     <div className="search">
-      <h2>Compare Product Now</h2>
+      <h2 className="animate__animated animate__fadeInDown">Compare Product Now</h2>
       <form className="search__form" onSubmit={ handleSubmit }>
-        <input className="search__input" name="search" placeholder="Search product" type="search" />
+        <input id="searching-product" className="search__input" name="search" placeholder="Search product" type="search" />
         <button className="btn">Search</button>
       </form>
       {isfetching? <p style={{marginTop: 30}}>Loading...</p> : null}

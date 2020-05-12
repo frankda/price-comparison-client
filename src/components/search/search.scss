@@ -21,8 +21,9 @@
       border-radius: 20px;
       margin-top: 24px;
   
-      &:focus {
+      &:not(:active) {
         outline: none;
+        animation: 0.8s jello;
       }
     }
   }

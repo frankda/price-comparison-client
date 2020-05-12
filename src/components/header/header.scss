@@ -5,11 +5,11 @@
   align-items: center;
   height: 70px;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-
+  
   &__logo {
     display: flex;
     align-items: center;
+    animation: 1s backInLeft;
   }
 
   .user-profile {

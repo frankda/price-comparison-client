@@ -3,7 +3,7 @@ import '../App.scss';
 import Header from './header/Header';
 import Footer from './Footer';
 import  { Search } from './search/Search';
-
+import 'animate.css';
 
 function App() {
   return (
@@ -13,6 +13,8 @@ function App() {
           header
         </Header>
         
+        <hr className="animate__animated animate__fadeInUp" />
+
         <Search />
 
 
