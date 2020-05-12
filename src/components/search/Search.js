@@ -1,8 +1,7 @@
 import React, { useState, Component } from 'react';
-import Scrape from '../utils/request';
-import { Button, Tooltip } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
-import { Gallery } from './Gallery';
+import Scrape from '../../utils/request';
+import { Gallery } from '../Gallery';
+import './search.scss';
 
 export const Search = (props) => {
   // const [productname, setProductname] = useState(''); // array destructuring
@@ -25,11 +24,9 @@ export const Search = (props) => {
   return (
     <div className="search">
       <h2>Compare Product Now</h2>
-      <form onSubmit={ handleSubmit }>
-        <label>
-          <input id="searching-product" name="search" placeholder="Search product" type="search" />
-        </label>
-        <button>Search</button>
+      <form className="search__form" onSubmit={ handleSubmit }>
+        <input className="search__input" name="search" placeholder="Search product" type="search" />
+        <button className="btn">Search</button>
       </form>
       {isfetching? <p style={{marginTop: 30}}>Loading...</p> : null}
       {results.length && !isfetching

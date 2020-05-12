@@ -1,8 +1,8 @@
 import React from 'react';
 import '../App.scss';
-import Header from './Header';
+import Header from './header/Header';
 import Footer from './Footer';
-import  { Search } from './Search';
+import  { Search } from './search/Search';
 
 
 function App() {
